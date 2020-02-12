@@ -33,15 +33,27 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-image: url('../public/jeremy-thomas-4dpAqfTbvKA-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  margin: 0;
+  min-height: 100%;
+}
+
 #app {
+  color: #fff;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  height: 100vh;
   margin-top: 60px;
+  text-align: center;
 }
+
 #welcome {
-  font-size: 24px;
+  font-size: 3rem;
+  font-weight: bold;
 }
 </style>
