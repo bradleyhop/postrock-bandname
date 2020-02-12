@@ -2,7 +2,6 @@
     <div class='formSelector'>
       <form>
         <select id="" name="" @change="itworks">
-          <option value="">Select an option</option>
           <option value="a">a</option>
         </select>
       </form>
