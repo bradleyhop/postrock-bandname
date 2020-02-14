@@ -10,9 +10,7 @@
 
 <script>
 import FormGenerator from './components/FormGenerator.vue';
-import {
-  birthMonth, firstInitial, shirtColor, lastNumber,
-} from './postRock';
+import questionArray from './postRock';
 
 export default {
   name: 'App',
@@ -21,12 +19,12 @@ export default {
   },
   methods: {
     tempMethod() {
-      const monthChoice = birthMonth.find((val) => val.month === 'june').val;
-      const initialLetter = firstInitial.find((val) => val.letter === 'I').val;
-      const shirt = shirtColor.find((val) => val.color === 'red').val;
-      const numb = lastNumber.find((val) => val.number === 'one').val;
+      const monthChoice = questionArray[0].find((val) => val.month === 'june').val;
+      // const initialLetter = firstInitial.find((val) => val.letter === 'I').val;
+      // const shirt = shirtColor.find((val) => val.color === 'red').val;
+      // const numb = lastNumber.find((val) => val.number === 'one').val;
 
-      console.log(`${monthChoice} ${initialLetter} ${shirt} ${numb}`);
+      console.log(`${monthChoice}`);
     },
   },
 };

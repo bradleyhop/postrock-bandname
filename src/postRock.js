@@ -1,255 +1,255 @@
 const birthMonth = [
   {
-    month: 'january',
+    key: 'january',
     val: 'This/These',
   },
   {
-    month: 'febuary',
+    key: 'febuary',
     val: 'Foolish',
   },
   {
-    month: 'march',
+    key: 'march',
     val: 'If',
   },
   {
-    month: 'april',
+    key: 'april',
     val: 'Colossal',
   },
   {
-    month: 'may',
+    key: 'may',
     val: 'The',
   },
   {
-    month: 'june',
+    key: 'june',
     val: 'Their',
   },
   {
-    month: 'july',
+    key: 'july',
     val: '...and',
   },
   {
-    month: 'august',
+    key: 'august',
     val: 'As',
   },
   {
-    month: 'september',
+    key: 'september',
     val: 'When',
   },
   {
-    month: 'october',
+    key: 'october',
     val: 'Lost',
   },
   {
-    month: 'novemember',
+    key: 'novemember',
     val: 'Subconcious',
   },
   {
-    month: 'december',
+    key: 'december',
     val: 'Sleeping',
   },
 ];
 
 const firstInitial = [
   {
-    letter: 'A',
+    key: 'A',
     val: 'Snow',
   },
   {
-    letter: 'B',
+    key: 'B',
     val: 'Astronaut(s)',
   },
   {
-    letter: 'C',
+    key: 'C',
     val: 'Tree(s)',
   },
   {
-    letter: 'D',
+    key: 'D',
     val: 'Hand(s)',
   },
   {
-    letter: 'E',
+    key: 'E',
     val: 'Cloud(s)',
   },
   {
-    letter: 'F',
+    key: 'F',
     val: 'Dog(s)',
   },
   {
-    letter: 'G',
+    key: 'G',
     val: 'Leave(s)',
   },
   {
-    letter: 'H',
+    key: 'H',
     val: 'Leader(s)',
   },
   {
-    letter: 'I',
+    key: 'I',
     val: 'God(s)',
   },
   {
-    letter: 'J',
+    key: 'J',
     val: 'Hill(s)',
   },
   {
-    letter: 'K',
+    key: 'K',
     val: 'Siren(s)',
   },
   {
-    letter: 'L',
+    key: 'L',
     val: 'Wave(s)',
   },
   {
-    letter: 'M',
+    key: 'M',
     val: 'World(s)',
   },
   {
-    letter: 'N',
+    key: 'N',
     val: 'Candle(s)',
   },
   {
-    letter: 'O',
+    key: 'O',
     val: 'Sky/Skies',
   },
   {
-    letter: 'P',
+    key: 'P',
     val: 'Root(s)',
   },
   {
-    letter: 'Q',
+    key: 'Q',
     val: 'Raindrop(s)',
   },
   {
-    letter: 'R',
+    key: 'R',
     val: 'Sign(s)',
   },
   {
-    letter: 'S',
+    key: 'S',
     val: 'Light',
   },
   {
-    letter: 'T',
+    key: 'T',
     val: 'Signal(s)',
   },
   {
-    letter: 'U',
+    key: 'U',
     val: 'Building(s)',
   },
   {
-    letter: 'V',
+    key: 'V',
     val: 'Canyon(s)',
   },
   {
-    letter: 'W',
+    key: 'W',
     val: 'Ship(s)',
   },
   {
-    letter: 'X',
+    key: 'X',
     val: 'Garden(s)',
   },
   {
-    letter: 'Y',
+    key: 'Y',
     val: 'Statue(s)',
   },
   {
-    letter: 'Z',
+    key: 'Z',
     val: 'Life',
   },
 ];
 
 const shirtColor = [
   {
-    color: 'red',
+    key: 'red',
     val: 'Separated',
   },
   {
-    color: 'pink',
+    key: 'pink',
     val: 'Separated',
   },
   {
-    color: 'orange',
+    key: 'orange',
     val: 'Dissolved',
   },
   {
-    color: 'yellow',
+    key: 'yellow',
     val: 'Become/Became',
   },
   {
-    color: 'green',
+    key: 'green',
     val: 'Were/Was',
   },
   {
-    color: 'blue',
+    key: 'blue',
     val: 'Turned to',
   },
   {
-    color: 'purple',
+    key: 'purple',
     val: 'Completed',
   },
   {
-    color: 'black',
+    key: 'black',
     val: 'Spoke to',
   },
   {
-    color: 'gray',
+    key: 'gray',
     val: 'Carried',
   },
   {
-    color: 'brown',
+    key: 'brown',
     val: 'Drove through',
   },
   {
-    color: 'white',
+    key: 'white',
     val: 'Could be',
   },
   {
-    color: 'none',
+    key: 'none',
     val: 'Sang to',
   },
 ];
 
 const lastNumber = [
   {
-    number: 'zero',
+    key: 'zero',
     val: 'Heaven',
   },
   {
-    number: 'one',
+    key: 'one',
     val: 'Our Home',
   },
   {
-    number: 'two',
+    key: 'two',
     val: 'the Stars',
   },
   {
-    number: 'three',
+    key: 'three',
     val: 'the Sky/Skies',
   },
   {
-    number: 'four',
+    key: 'four',
     val: 'Nothing',
   },
   {
-    number: 'five',
+    key: 'five',
     val: 'Gods',
   },
   {
-    number: 'six',
+    key: 'six',
     val: 'Stone',
   },
   {
-    number: 'seven',
+    key: 'seven',
     val: 'Windows',
   },
   {
-    number: 'eight',
+    key: 'eight',
     val: 'Atoms',
   },
   {
-    number: 'nine',
+    key: 'nine',
     val: 'Emperors',
   },
 ];
 
-export {
-  birthMonth, firstInitial, shirtColor, lastNumber,
-};
+const questionArray = [birthMonth, firstInitial, lastNumber, shirtColor];
+
+export default questionArray;
