@@ -3,7 +3,7 @@
     <div id="welcome">Instrumental Post Rock Band Name Generator</div>
       <div class="month">
           <h1>What is your birth month?</h1>
-            <FormGenerator />
+            <FormGenerator @childClick="addToBandName"/>
       </div>
   </div>
 </template>
@@ -17,6 +17,11 @@ export default {
   components: {
     FormGenerator,
   },
+  data() {
+    return {
+      userBandName: '',
+    };
+  },
   methods: {
     tempMethod() {
       const monthChoice = questionArray[0].find((val) => val.month === 'june').val;
@@ -25,6 +30,10 @@ export default {
       // const numb = lastNumber.find((val) => val.number === 'one').val;
 
       console.log(`${monthChoice}`);
+    },
+    addToBandName(val) {
+      this.userBandName += ` ${val}`;
+      console.log(this.userBandName);
     },
   },
 };
