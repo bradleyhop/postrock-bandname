@@ -1,12 +1,12 @@
 <template>
     <div class='formSelector'>
       <form>
-        <select id="" name="" v-model="chosen" v-on:change="sendSelected">
+        <select v-model="chosen">
           <option v-for="el in choiceList" :key="el.id"
             v-bind:value="el.val">{{ el.key }}</option>
         </select>
       </form>
-      <div>{{chosen}}</div>
+      <button @click="sendSelected">Submit</button>
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     sendSelected() {
-      console.log(this.chosen);
+      this.$emit('childClick', this.chosen);
     },
   },
 };
@@ -33,5 +33,8 @@ export default {
 <style scoped lang="scss">
 .formSelector {
   text-align: center;
+}
+button {
+  margin: 10px;
 }
 </style>
