@@ -1,36 +1,37 @@
 <template>
   <div id="app">
     <div id="welcome">Instrumental Post Rock Band Name Generator</div>
-      <div class="month">
-          <h1>What is your birth month?</h1>
-            <FormGenerator @childClick="addToBandName"/>
-      </div>
+    <div v-for="(query, index) in questions" :key="query.id">
+      <h1>{{ query }}</h1>
+      <FormGenerator @childClick="addToBandName" :index=index />
+    </div>
   </div>
 </template>
 
 <script>
 import FormGenerator from './components/FormGenerator.vue';
-import questionArray from './postRock';
 
 export default {
   name: 'App',
   components: {
     FormGenerator,
   },
+  props: {
+    index: null,
+  },
   data() {
     return {
       userBandName: '',
+      questions: [
+        'What is your birth month?',
+        'First letter of your last name?',
+        'Color of your shirt?',
+        'Last number of the year you were born?',
+      ],
+      numb: 0,
     };
   },
   methods: {
-    tempMethod() {
-      const monthChoice = questionArray[0].find((val) => val.month === 'june').val;
-      // const initialLetter = firstInitial.find((val) => val.letter === 'I').val;
-      // const shirt = shirtColor.find((val) => val.color === 'red').val;
-      // const numb = lastNumber.find((val) => val.number === 'one').val;
-
-      console.log(`${monthChoice}`);
-    },
     addToBandName(val) {
       this.userBandName += ` ${val}`;
       console.log(this.userBandName);
