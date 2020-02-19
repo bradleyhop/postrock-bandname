@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="welcome">Instrumental Post Rock Band Name Generator</div>
-    <div v-for="(query, index) in questions" :key="query.id">
+    <div v-for="(query, index) in questions" :key="index">
       <h1>{{ query }}</h1>
-      <FormGenerator @childClick="addToBandName" :index=index />
+      <FormGenerator @childClick="addToBandName" :qIndex="index" />
     </div>
   </div>
 </template>
@@ -16,19 +16,15 @@ export default {
   components: {
     FormGenerator,
   },
-  props: {
-    index: null,
-  },
   data() {
     return {
       userBandName: '',
       questions: [
         'What is your birth month?',
         'First letter of your last name?',
-        'Color of your shirt?',
         'Last number of the year you were born?',
+        'Color of your shirt?',
       ],
-      numb: 0,
     };
   },
   methods: {
