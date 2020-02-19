@@ -16,9 +16,12 @@ import questionArray from '../postRock';
 
 export default {
   name: 'FormGenerator',
+  props: {
+    qIndex: Number,
+  },
   data() {
     return {
-      choiceList: questionArray[0],
+      choiceList: questionArray[this.qIndex],
       chosen: null,
     };
   },
