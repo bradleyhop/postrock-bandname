@@ -1,14 +1,14 @@
 <template>
-    <div class='formSelector'>
-      <form>
-        <select v-model="chosen">
-          <option value="" disabled selected="selected">Select answer</option>
-          <option v-for="el in choiceList" :key="el.id"
-            v-bind:value="el.val">{{ el.key }}</option>
-        </select>
-      </form>
-      <button @click="sendSelected">Submit</button>
-    </div>
+  <div class='formSelector'>
+    <form>
+      <select v-model="chosen">
+        <option value="" disabled selected="selected">Select answer</option>
+        <option v-for="el in choiceList" :key="el.id"
+                v-bind:value="el.val">{{ el.key }}</option>
+      </select>
+    </form>
+    <button @click="sendSelected">Submit</button>
+  </div>
 </template>
 
 <script>

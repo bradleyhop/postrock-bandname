@@ -2,8 +2,14 @@
   <div id="app">
     <div id="welcome">Instrumental Post Rock Band Name Generator</div>
     <div v-for="(query, index) in questions" :key="index">
-      <h1>{{ query }}</h1>
-      <FormGenerator @childClick="addToBandName" :qIndex="index" />
+      <div v-show="index === questionIndex">
+        <h1>{{ query }}</h1>
+        <FormGenerator @childClick="addToBandName" :qIndex="index" />
+      </div>
+    </div>
+    <div v-show="questionIndex === questions.length">
+      <div class="resultCopy"><i>Your band name is: </i></div>
+      <div class="bandName">{{ userBandName }}</div>
     </div>
   </div>
 </template>
@@ -25,11 +31,13 @@ export default {
         'Last number of the year you were born?',
         'Color of your shirt?',
       ],
+      questionIndex: 0,
     };
   },
   methods: {
     addToBandName(val) {
       this.userBandName += ` ${val}`;
+      this.questionIndex++;
       console.log(this.userBandName);
     },
   },
@@ -38,6 +46,7 @@ export default {
 
 <style lang="scss">
 body {
+  background-color: #000;
   background-image: url('../public/jeremy-thomas-4dpAqfTbvKA-unsplash.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -59,5 +68,15 @@ body {
 #welcome {
   font-size: 3rem;
   font-weight: bold;
+}
+
+.resultCopy {
+  font-size: 24px;
+  margin: 15px;
+}
+
+.bandName {
+  font-size: 48px;
+  margin: 25px;
 }
 </style>
