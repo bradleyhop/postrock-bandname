@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
-    <div id="welcome">Instrumental Post Rock Band Name Generator</div>
+  <div class="app">
+    <div class="welcome">
+      INSTRUMENTAL POST ROCK<br>
+      BAND NAME GENERATOR
+    </div>
     <div v-for="(query, index) in questions" :key="index">
       <div v-if="index === questionIndex">
         <div class="query">{{ query }}</div>
@@ -8,12 +11,12 @@
       </div>
     </div>
     <div v-if="questionIndex === questions.length">
-      <div class="resultCopy">
-        <i>Your band name is: </i>
+      <div class="result-copy">
+        <i>&#40; your band name is &#41;</i>
       </div>
-      <div class="bandName">{{ userBandName }}</div>
-      <button @click="reset" type="reset" value="Reset">
-        Reset Generator
+      <div class="band-name">{{ userBandName }}</div>
+      <button @click="reset" type="reset">
+        reset generator
       </button>
     </div>
   </div>
@@ -29,20 +32,22 @@ export default {
   },
   data() {
     return {
-      userBandName: '',
       questions: [
-        'What is your birth month?',
-        'First letter of your last name?',
-        'Color of your shirt?',
-        'Last number of the year you were born?',
+        'what is your birth month?',
+        'first letter of your last name?',
+        'color of your shirt?',
+        'last number of the year you were born?',
       ],
       questionIndex: 0,
+      userBandName: '',
     };
   },
   methods: {
     addToBandName(val) {
-      this.userBandName += ` ${val}`;
-      this.questionIndex++;
+      if (val) {
+        this.userBandName += ` ${val}`;
+        this.questionIndex++;
+      }
     },
     reset() {
       this.questionIndex = 0;
@@ -53,32 +58,53 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
+$big-font: 'Varela Round', Roboto, Arial, sans-serif;
+$little-font: 'Open Sans', sans-serif;
+
+.app {
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin-top: 60px;
+  font-family: $big-font;
+  height: 100%;
+  margin: auto;
   text-align: center;
+  width: 70%;
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 }
 
-#welcome {
-  font-size: 3rem;
-  font-weight: bold;
-  margin: 1rem;
+.welcome {
+  color: #f6d0fe;
+  font: {
+    size: 2.5rem;
+    weight: bold;
+  }
+  padding-top: 6rem;
 }
 
-.query {
-  font-size: 2rem;
+.query,
+.result-copy {
+  font: {
+    family: $little-font;
+    size: 2rem;
+  }
+  padding: 3rem 0 2rem 0;
 }
 
-.resultCopy {
-  font-size: 2rem;
-  margin: 15px;
+button {
+  font-family: $little-font;
 }
 
-.bandName {
-  font-size: 4rem;
-  margin: 25px;
+.band-name {
+  color: #cfecf8;
+  font: {
+    family: $big-font;
+    size: 4rem;
+    weight: bold;
+  }
+  letter-spacing: 0.2rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 </style>
