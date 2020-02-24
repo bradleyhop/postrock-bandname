@@ -4,10 +4,12 @@
       <select v-model="chosen">
         <option value="" disabled selected="selected">Select answer</option>
         <option v-for="el in choiceList" :key="el.id"
-                v-bind:value="el.val">{{ el.key }}</option>
+                :value="el.val">{{ el.key }}</option>
       </select>
     </form>
-    <button @click="sendSelected">Submit</button>
+    <button @click="sendSelected" type="submit">
+      Submit
+    </button>
   </div>
 </template>
 
@@ -28,12 +30,13 @@ export default {
   methods: {
     sendSelected() {
       this.$emit('childClick', this.chosen);
+      // reset chosen select option
+      this.chosen = null;
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .formSelector {
   text-align: center;

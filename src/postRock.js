@@ -250,6 +250,6 @@ const lastNumber = [
   },
 ];
 
-const questionArray = [birthMonth, firstInitial, lastNumber, shirtColor];
+const questionArray = [birthMonth, firstInitial, shirtColor, lastNumber];
 
 export default questionArray;
