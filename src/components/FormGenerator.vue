@@ -1,15 +1,14 @@
 <template>
-  <div class='formSelector'>
+  <div class="form-selector">
     <form>
-      <select v-model="chosen">
-        <option value="" disabled selected="selected">Select answer</option>
+      <select v-model="chosen" required>
+        <option value="" disabled>select answer</option>
         <option v-for="el in choiceList" :key="el.id"
                 :value="el.val">{{ el.key }}</option>
       </select>
+      <br>
+      <input @click="sendSelected" type="submit" value="submit">
     </form>
-    <button @click="sendSelected" type="submit">
-      Submit
-    </button>
   </div>
 </template>
 
@@ -29,19 +28,39 @@ export default {
   },
   methods: {
     sendSelected() {
-      this.$emit('childClick', this.chosen);
-      // reset chosen select option
-      this.chosen = null;
+      if (this.chosen) {
+        this.$emit('childClick', this.chosen);
+        // reset chosen select option in each iteration for quiz reload
+        this.chosen = null;
+      }
     },
   },
 };
 </script>
 
 <style scoped lang="scss">
-.formSelector {
+.form-selector {
+  font-family: 'Open Sans', sans-serif;
   text-align: center;
 }
-button {
-  margin: 10px;
+
+select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+input[type=submit] {
+  background-color: rgba(255, 255, 255, 0.75);
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 1rem;
+  cursor: pointer;
 }
 </style>
