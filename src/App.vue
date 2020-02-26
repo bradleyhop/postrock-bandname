@@ -66,7 +66,7 @@ $little-font: 'Open Sans', sans-serif;
   background: rgba(0, 0, 0, 0.65);
   */
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0) 100%);
+  rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0) 100%);
   color: #fff;
   font-family: $big-font;
   height: 100%;
@@ -100,10 +100,10 @@ $little-font: 'Open Sans', sans-serif;
     family: $little-font;
     size: 2rem;
   }
-  padding: 3rem 0 2rem 0;
+  padding: 3rem 0 2rem;
 
   @media (max-width: 900px) {
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0;
   }
 }
 
@@ -119,11 +119,11 @@ button {
     weight: bold;
   }
   letter-spacing: 0.25rem;
-  padding: 1rem 0.5rem 1rem 0.5rem;
+  padding: 1rem 0.5rem;
 
   @media (max-width: 900px) {
     font-size: 3rem;
-    padding: 0.5rem 0 0.5rem 0;
+    padding: 0.5rem 0;
   }
 }
 
@@ -131,13 +131,13 @@ button {
   background: rgba(255, 255, 255, 0.45);
   border: rgb(255, 255, 255) solid 1px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px #000;
   color: #fff;
+  cursor: pointer;
   font-size: 1rem;
   letter-spacing: 0.1rem;
+  margin: 1rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
-  margin: 1rem;
-  cursor: pointer;
 }
 </style>
