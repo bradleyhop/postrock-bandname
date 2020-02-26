@@ -46,9 +46,9 @@ export default {
 }
 
 select {
+  border-style: none;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  border: none;
 }
 </style>
