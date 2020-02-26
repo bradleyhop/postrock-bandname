@@ -7,7 +7,8 @@
                 :value="el.val">{{ el.key }}</option>
       </select>
       <br>
-      <input @click="sendSelected" type="submit" value="submit">
+      <input @click="sendSelected" type="submit" value="submit"
+             class="band-button">
     </form>
   </div>
 </template>
@@ -49,18 +50,5 @@ select {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   border: none;
-}
-
-input[type=submit] {
-  background-color: rgba(255, 255, 255, 0.75);
-  border: none;
-  border-radius: 5px;
-  color: black;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  margin: 1rem;
-  cursor: pointer;
 }
 </style>
