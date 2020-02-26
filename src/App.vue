@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="welcome">
-      INSTRUMENTAL POST ROCK<br>
+      INSTRUMENTAL POST-ROCK<br>
       BAND NAME GENERATOR
     </div>
     <div v-for="(query, index) in questions" :key="index">
@@ -15,7 +15,7 @@
         <i>&#40; your band name is &#41;</i>
       </div>
       <div class="band-name">{{ userBandName }}</div>
-      <button @click="reset" type="reset">
+      <button @click="reset" type="reset" class="band-button">
         reset generator
       </button>
     </div>
@@ -62,13 +62,17 @@ $big-font: 'Varela Round', Roboto, Arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 
 .app {
-  background: rgba(0, 0, 0, 0.6);
+  /*
+  background: rgba(0, 0, 0, 0.65);
+  */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0) 100%);
   color: #fff;
   font-family: $big-font;
   height: 100%;
   margin: auto;
   text-align: center;
-  width: 70%;
+  width: 80%;
 
   @media (max-width: 900px) {
     width: 100%;
@@ -78,10 +82,16 @@ $little-font: 'Open Sans', sans-serif;
 .welcome {
   color: #f6d0fe;
   font: {
-    size: 2.5rem;
+    size: 3rem;
     weight: bold;
   }
+  letter-spacing: 0.1rem;
   padding-top: 6rem;
+
+  @media (max-width: 900px) {
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
 }
 
 .query,
@@ -91,6 +101,10 @@ $little-font: 'Open Sans', sans-serif;
     size: 2rem;
   }
   padding: 3rem 0 2rem 0;
+
+  @media (max-width: 900px) {
+    padding: 1rem 0 1rem 0;
+  }
 }
 
 button {
@@ -104,7 +118,26 @@ button {
     size: 4rem;
     weight: bold;
   }
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.25rem;
   padding: 1rem 0.5rem 1rem 0.5rem;
+
+  @media (max-width: 900px) {
+    font-size: 3rem;
+    padding: 0.5rem 0 0.5rem 0;
+  }
+}
+
+.band-button {
+  background: rgba(255, 255, 255, 0.45);
+  border: rgb(255, 255, 255) solid 1px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+  color: #fff;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  margin: 1rem;
+  cursor: pointer;
 }
 </style>

@@ -1,0 +1,21 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  background: {
+    color: #000;
+    image: url('../jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+  height: 100%;
+  overflow: hidden;
+
+  @media (max-width: 900px) {
+    overflow: initial;
+  }
+}
