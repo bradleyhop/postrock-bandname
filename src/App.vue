@@ -7,7 +7,7 @@
     <div v-for="(query, index) in questions" :key="index">
       <div v-if="index === questionIndex">
         <div class="query">{{ query }}</div>
-        <FormGenerator @childClick="addToBandName" :qIndex="index" />
+        <SelectGenerator @childClick="addToBandName" :qIndex="index" />
       </div>
     </div>
     <div v-if="questionIndex === questions.length">
@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import FormGenerator from './components/FormGenerator.vue';
+import SelectGenerator from './components/SelectGenerator.vue';
 
 export default {
   name: 'App',
   components: {
-    FormGenerator,
+    SelectGenerator,
   },
   data() {
     return {
@@ -46,7 +46,7 @@ export default {
     addToBandName(val) {
       if (val) {
         this.userBandName += ` ${val}`;
-        this.questionIndex++;
+        this.questionIndex += 1;
       }
     },
     reset() {
@@ -62,9 +62,7 @@ $big-font: 'Varela Round', Roboto, Arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 
 .app {
-  /*
   background: rgba(0, 0, 0, 0.65);
-  */
   background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,
   rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0) 100%);
   color: #fff;
