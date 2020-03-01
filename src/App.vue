@@ -63,8 +63,13 @@ $little-font: 'Open Sans', sans-serif;
 
 .app {
   background: rgba(0, 0, 0, 0.65);
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%,
-  rgba(0, 0, 0, 0.85) 50%, rgba(0, 0, 0, 0) 100%);
+  background:
+    linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.65) 50%,
+    rgba(0, 0, 0, 0) 100%
+    );
   color: #fff;
   font-family: $big-font;
   height: 100%;
