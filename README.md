@@ -1,6 +1,7 @@
 # postrock-bandname
 
-## Stolen from a meme!
+**Stolen from a meme!**
+
 I saw this cool little meme an Instrument Post-Rock Appreciation facebook page.
 The meme is a static image, but I thought it would make a great project.
 

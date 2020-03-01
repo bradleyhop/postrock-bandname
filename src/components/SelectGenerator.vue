@@ -17,7 +17,7 @@
 import questionArray from '../postRock';
 
 export default {
-  name: 'FormGenerator',
+  name: 'SelectGenerator',
   props: {
     qIndex: Number,
   },
