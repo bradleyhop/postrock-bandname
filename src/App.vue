@@ -16,19 +16,45 @@
       </div>
       <div class="band-name">{{ userBandName }}</div>
       <button @click="reset" type="reset" class="band-button">
-        reset generator
+        <i class="fas fa-redo"></i>
+         reset generator
       </button>
+      <social-sharing
+        url="https://bradleyhop.github.io/postRockBandName"
+        :title="userBandName"
+        description="Post-Rock Band Name Generator"
+        :quote="userBandName"
+        hashtags="vue.js, postrock, freecodcamp"
+        twitter-user="bradleyhop1"
+        inline-template>
+        <div class="media-bar">
+          <network network="facebook" class="media-link">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </network>
+          <network network="twitter" class="media-link">
+            <i class="fab fa-twitter"></i> Twitter
+          </network>
+          <network network="reddit" class="media-link">
+            <i class="fab fa-reddit-alien"></i> Reddit
+          </network>
+          <network network="email" class="media-link">
+            <i class="fa fa-envelope"></i> Email
+          </network>
+        </div>
+      </social-sharing>
     </div>
   </div>
 </template>
 
 <script>
+import SocialSharing from 'vue-social-sharing';
 import SelectGenerator from './components/SelectGenerator.vue';
 
 export default {
   name: 'App',
   components: {
     SelectGenerator,
+    SocialSharing,
   },
   data() {
     return {
@@ -63,13 +89,10 @@ $little-font: 'Open Sans', sans-serif;
 
 .app {
   background: rgba(0, 0, 0, 0.65);
-  background:
-    linear-gradient(
-    to right,
+  background: linear-gradient(to right,
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.65) 50%,
-    rgba(0, 0, 0, 0) 100%
-    );
+    rgba(0, 0, 0, 0) 100%);
   color: #fff;
   font-family: $big-font;
   height: 100%;
@@ -142,5 +165,33 @@ button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   text-decoration: none;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.media-bar {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 3px;
+  color: #f6d0fe;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+
+.media-link {
+  padding: 0.25rem;
+
+  &:hover {
+    color: #fff;
+  }
 }
 </style>
