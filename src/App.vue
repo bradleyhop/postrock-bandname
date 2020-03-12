@@ -86,13 +86,14 @@ export default {
 <style lang="scss">
 $big-font: 'Varela Round', Roboto, Arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
+$responsive-breakpoint: 768px;
 
 .app {
   background: rgba(0, 0, 0, 0.65);
   background: linear-gradient(to right,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.65) 50%,
-    rgba(0, 0, 0, 0) 100%);
+  rgba(0, 0, 0, 0) 0%,
+  rgba(0, 0, 0, 0.65) 50%,
+  rgba(0, 0, 0, 0) 100%);
   color: #fff;
   font-family: $big-font;
   height: 100%;
@@ -100,7 +101,7 @@ $little-font: 'Open Sans', sans-serif;
   text-align: center;
   width: 80%;
 
-  @media (max-width: 900px) {
+  @media (max-width: $responsive-breakpoint) {
     width: 100%;
   }
 }
@@ -114,7 +115,7 @@ $little-font: 'Open Sans', sans-serif;
   letter-spacing: 0.1rem;
   padding-top: 6rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: $responsive-breakpoint) {
     font-size: 2rem;
     padding-top: 2rem;
   }
@@ -128,7 +129,7 @@ $little-font: 'Open Sans', sans-serif;
   }
   padding: 3rem 0 2rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: $responsive-breakpoint) {
     padding: 1rem 0;
   }
 }
@@ -147,7 +148,7 @@ button {
   letter-spacing: 0.25rem;
   padding: 1rem 0.5rem;
 
-  @media (max-width: 900px) {
+  @media (max-width: $responsive-breakpoint) {
     font-size: 3rem;
     padding: 0.5rem 0;
   }
@@ -173,18 +174,24 @@ button {
 
 .media-bar {
   background: rgba(0, 0, 0, 0.45);
-  border-radius: 3px;
+  bottom: 0;
   color: #f6d0fe;
   cursor: pointer;
   font-size: 1rem;
+  left: 0;
   letter-spacing: 0.1rem;
-  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+  position: fixed;
   text-decoration: none;
   width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  margin: 0 auto;
+
+  @media (max-width: $responsive-breakpoint) {
+    display: grid;
+    grid-row-gap: 0.5rem;
+    grid-template-columns: repeat(2, auto);
+    justify-items: start;
+  }
 }
 
 .media-link {
