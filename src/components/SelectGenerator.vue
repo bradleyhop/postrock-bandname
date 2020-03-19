@@ -3,12 +3,10 @@
     <form>
       <select v-model="chosen" required>
         <option value="" disabled>select answer</option>
-        <option v-for="el in choiceList" :key="el.id"
-                :value="el.val">{{ el.key }}</option>
+        <option v-for="el in choiceList" :key="el.id" :value="el.val">{{ el.key }}</option>
       </select>
-      <br>
-      <input @click="sendSelected" type="submit" value="submit"
-             class="band-button">
+      <br />
+      <input @click="sendSelected" type="submit" value="submit" class="band-button" />
     </form>
   </div>
 </template>
@@ -24,7 +22,7 @@ export default {
   data() {
     return {
       choiceList: questionArray[this.qIndex],
-      chosen: null,
+      chosen: undefined,
     };
   },
   methods: {
@@ -32,7 +30,7 @@ export default {
       if (this.chosen) {
         this.$emit('childClick', this.chosen);
         // reset chosen select option in each iteration for quiz reload
-        this.chosen = null;
+        this.chosen = undefined;
       }
     },
   },

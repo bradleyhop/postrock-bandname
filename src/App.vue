@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <div class="welcome">
-      INSTRUMENTAL POST-ROCK<br>
+      INSTRUMENTAL POST-ROCK<br />
       BAND NAME GENERATOR
     </div>
     <div v-for="(query, index) in questions" :key="index">
@@ -14,10 +14,12 @@
       <div class="result-copy">
         <i>&#40; your band name is &#41;</i>
       </div>
-      <div class="band-name">{{ userBandName }}</div>
+      <div class="band-name">
+        {{ userBandName }}
+      </div>
       <button @click="reset" type="reset" class="band-button">
         <i class="fas fa-redo"></i>
-         reset generator
+        reset generator
       </button>
       <social-sharing
         url="https://bradleyhop.github.io/postRockBandName"
@@ -26,7 +28,8 @@
         :quote="userBandName"
         hashtags="vue.js, postrock, freecodcamp"
         twitter-user="bradleyhop1"
-        inline-template>
+        inline-template
+      >
         <div class="media-bar">
           <network network="facebook" class="media-link">
             <i class="fab fa-facebook-f"></i> Facebook
@@ -84,16 +87,19 @@ export default {
 </script>
 
 <style lang="scss">
-$big-font: 'Varela Round', Roboto, Arial, sans-serif;
+$big-font: 'Varela Round', roboto, arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 $responsive-breakpoint: 768px;
 
 .app {
   background: rgba(0, 0, 0, 0.65);
-  background: linear-gradient(to right,
-  rgba(0, 0, 0, 0) 0%,
-  rgba(0, 0, 0, 0.65) 50%,
-  rgba(0, 0, 0, 0) 100%);
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.65) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
   color: #fff;
   font-family: $big-font;
   height: 100%;
@@ -108,12 +114,12 @@ $responsive-breakpoint: 768px;
 
 .welcome {
   color: #f6d0fe;
+  letter-spacing: 0.1rem;
+  padding-top: 6rem;
   font: {
     size: 3rem;
     weight: bold;
   }
-  letter-spacing: 0.1rem;
-  padding-top: 6rem;
 
   @media (max-width: $responsive-breakpoint) {
     font-size: 2rem;
@@ -127,6 +133,7 @@ $responsive-breakpoint: 768px;
     family: $little-font;
     size: 2rem;
   }
+
   padding: 3rem 0 2rem;
 
   @media (max-width: $responsive-breakpoint) {
@@ -140,13 +147,13 @@ button {
 
 .band-name {
   color: #cfecf8;
+  letter-spacing: 0.25rem;
+  padding: 1rem 0.5rem;
   font: {
     family: $big-font;
     size: 4rem;
     weight: bold;
   }
-  letter-spacing: 0.25rem;
-  padding: 1rem 0.5rem;
 
   @media (max-width: $responsive-breakpoint) {
     font-size: 3rem;
@@ -177,7 +184,7 @@ button {
   bottom: 0;
   color: #f6d0fe;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 2rem;
   left: 0;
   letter-spacing: 0.1rem;
   margin: 0 auto;
@@ -188,6 +195,7 @@ button {
 
   @media (max-width: $responsive-breakpoint) {
     display: grid;
+    font-size: 1.25rem;
     grid-row-gap: 0.5rem;
     grid-template-columns: repeat(2, auto);
     justify-items: start;

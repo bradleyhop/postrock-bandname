@@ -11,6 +11,9 @@
     "core-js": "^3.6.4",
     "stylelint": "^13.2.1",
     "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0",
+    "stylelint-scss": "^3.15.0",
     "vue": "^2.6.11",
     "vue-social-sharing": "^2.4.7"
   },
