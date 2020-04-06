@@ -38,14 +38,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$little-font: 'Open Sans', sans-serif;
+
 .form-selector {
-  font-family: 'Open Sans', sans-serif;
+  font-family: $little-font;
   text-align: center;
 }
 
 select {
   border-style: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: $little-font;
   font-size: 1rem;
   padding: 0.5rem 1rem;
 }
