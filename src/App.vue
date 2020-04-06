@@ -29,19 +29,19 @@
         hashtags="vue.js, postrock, freecodcamp"
         twitter-user="bradleyhop1"
         inline-template
-      >
+        >
         <div class="media-bar">
           <network network="facebook" class="media-link">
-            <i class="fab fa-facebook-f"></i> Facebook
+          <i class="fab fa-facebook-f"></i> Facebook
           </network>
           <network network="twitter" class="media-link">
-            <i class="fab fa-twitter"></i> Twitter
+          <i class="fab fa-twitter"></i> Twitter
           </network>
           <network network="reddit" class="media-link">
-            <i class="fab fa-reddit-alien"></i> Reddit
+          <i class="fab fa-reddit-alien"></i> Reddit
           </network>
           <network network="email" class="media-link">
-            <i class="fa fa-envelope"></i> Email
+          <i class="fa fa-envelope"></i> Email
           </network>
         </div>
       </social-sharing>
@@ -87,43 +87,60 @@ export default {
 </script>
 
 <style lang="scss">
+
 $big-font: 'Varela Round', roboto, arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 $responsive-breakpoint: 768px;
 
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  height: 100%;
+}
+
+body {
+  background: {
+    color: #000;
+    image:
+      linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT.jpg');
+    position: center;
+    repeat: no-repeat;
+    size: cover;
+  }
+
+  height: 100%;
+  margin: 0;
+}
+
 .app {
-  background: rgba(0, 0, 0, 0.65);
-  background:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.65) 50%,
-      rgba(0, 0, 0, 0) 100%
-    );
   color: #fff;
   font-family: $big-font;
   height: 100%;
   margin: auto;
   text-align: center;
-  width: 80%;
+  width: 100%;
 
-  @media (max-width: $responsive-breakpoint) {
-    width: 100%;
+  @media only screen and (min-width: $responsive-breakpoint) {
+    width: 80%;
   }
 }
 
 .welcome {
   color: #f6d0fe;
   letter-spacing: 0.1rem;
-  padding-top: 6rem;
+  padding-top: 2rem;
   font: {
-    size: 3rem;
+    size: 1.5rem;
     weight: bold;
   }
 
-  @media (max-width: $responsive-breakpoint) {
-    font-size: 2rem;
-    padding-top: 2rem;
+  @media only screen and (min-width: $responsive-breakpoint) {
+    font-size: 3rem;
+    padding-top: 6rem;
   }
 }
 
@@ -131,13 +148,14 @@ $responsive-breakpoint: 768px;
 .result-copy {
   font: {
     family: $little-font;
-    size: 2rem;
+    size: 1.25rem;
   }
 
-  padding: 3rem 0 2rem;
+  padding: 1rem 0;
 
-  @media (max-width: $responsive-breakpoint) {
-    padding: 1rem 0;
+  @media only screen and (min-width: $responsive-breakpoint) {
+    font-size: 2rem;
+    padding: 3rem 0 2rem;
   }
 }
 
@@ -148,16 +166,16 @@ button {
 .band-name {
   color: #cfecf8;
   letter-spacing: 0.25rem;
-  padding: 1rem 0.5rem;
+  padding: 0.5rem 0;
   font: {
     family: $big-font;
-    size: 4rem;
+    size: 2.5rem;
     weight: bold;
   }
 
-  @media (max-width: $responsive-breakpoint) {
-    font-size: 3rem;
-    padding: 0.5rem 0;
+  @media only screen and (min-width: $responsive-breakpoint) {
+    font-size: 4rem;
+    padding: 1rem 0.5rem;
   }
 }
 
@@ -184,7 +202,11 @@ button {
   bottom: 0;
   color: #f6d0fe;
   cursor: pointer;
-  font-size: 2rem;
+  display: grid;
+  font-size: 1.25rem;
+  grid-row-gap: 0.5rem;
+  grid-template-columns: repeat(2, auto);
+  justify-items: start;
   left: 0;
   letter-spacing: 0.1rem;
   margin: 0 auto;
@@ -193,12 +215,9 @@ button {
   text-decoration: none;
   width: 100%;
 
-  @media (max-width: $responsive-breakpoint) {
-    display: grid;
-    font-size: 1.25rem;
-    grid-row-gap: 0.5rem;
-    grid-template-columns: repeat(2, auto);
-    justify-items: start;
+  @media only screen and (min-width: $responsive-breakpoint) {
+    display: block;
+    font-size: 2rem;
   }
 }
 
