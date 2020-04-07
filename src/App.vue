@@ -1,52 +1,52 @@
 <template>
   <div class="app">
-    <div class="welcome">
-      INSTRUMENTAL POST-ROCK<br />
-      BAND NAME GENERATOR
-    </div>
     <div v-for="(query, index) in questions" :key="index">
       <div v-if="index === questionIndex">
         <div class="query">{{ query }}</div>
         <SelectGenerator @childClick="addToBandName" :qIndex="index" />
       </div>
     </div>
-    <div v-if="questionIndex === questions.length">
-      <div class="result-copy">
-        <i>&#40; your band name is &#41;</i>
-      </div>
-      <div class="band-name">
-        {{ userBandName }}
-      </div>
-      <button @click="reset" type="reset" class="band-button">
-        <i class="fas fa-redo"></i>
-        reset generator
-      </button>
-      <social-sharing
-        url="https://bradleyhop.github.io/postRockBandName"
-        :title="userBandName"
-        description="Post-Rock Band Name Generator"
-        :quote="userBandName"
-        hashtags="vue.js, postrock, freecodcamp"
-        twitter-user="bradleyhop1"
-        inline-template
-        >
-        <div class="media-bar">
-          <network network="facebook" class="media-link">
-          <i class="fab fa-facebook-f"></i> Facebook
-          </network>
-          <network network="twitter" class="media-link">
-          <i class="fab fa-twitter"></i> Twitter
-          </network>
-          <network network="reddit" class="media-link">
-          <i class="fab fa-reddit-alien"></i> Reddit
-          </network>
-          <network network="email" class="media-link">
-          <i class="fa fa-envelope"></i> Email
-          </network>
+    <div v-if="questionIndex === questions.length" class="result-wrapper">
+      <div class="top-wrapper">
+        <div class="result-copy">
+          <i>&#40; your band name is &#41;</i>
         </div>
-      </social-sharing>
-    </div>
-  </div>
+        <div class="band-name">
+          {{ userBandName }}
+        </div>
+        <button @click="reset" type="reset" class="band-button">
+          <i class="fas fa-redo"></i>
+          reset generator
+        </button>
+      </div>
+      <div class="bottom-wrapper">
+        <social-sharing
+          url="https://bradleyhop.github.io/postRockBandName"
+          :title="userBandName"
+          description="Post-Rock Band Name Generator"
+          :quote="userBandName"
+          hashtags="vue.js, postrock, freecodcamp"
+          twitter-user="bradleyhop1"
+          inline-template
+          >
+          <div class="media-bar">
+            <network network="facebook" class="media-link">
+            <i class="fab fa-facebook-f"></i> Facebook
+            </network>
+            <network network="twitter" class="media-link">
+            <i class="fab fa-twitter"></i> Twitter
+            </network>
+            <network network="reddit" class="media-link">
+            <i class="fab fa-reddit-alien"></i> Reddit
+            </network>
+            <network network="email" class="media-link">
+            <i class="fa fa-envelope"></i> Email
+            </network>
+          </div>
+        </social-sharing>
+      </div>
+    </div><!-- end result-wrapper -->
+  </div><!-- end app -->
 </template>
 
 <script>
@@ -93,7 +93,6 @@ $little-font: 'Open Sans', sans-serif;
 $responsive-breakpoint: 768px;
 
 html {
-  box-sizing: border-box;
   font-size: 18px;
   height: 100%;
 }
@@ -103,44 +102,48 @@ body {
     color: #000;
     image:
       linear-gradient(
-        rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)
+        rgba(0, 0, 0, 0.55),
+        rgba(0, 0, 0, 0.55)
       ),
       url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT.jpg');
-    position: center;
-    repeat: no-repeat;
+    position: center top;
+    repeat: repeat-y;
     size: cover;
   }
 
+  font-family: $big-font;
   height: 100%;
-  margin: 0;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.welcome {
+  h1 {
+    color: #f6d0fe;
+    letter-spacing: 0.1rem;
+    margin-block: 0;
+    font: {
+      size: 1.5rem;
+      weight: bold;
+    }
+  }
+
+  @media only screen and (min-width: $responsive-breakpoint) {
+    h1 {
+      font-size: 3rem;
+    }
+  }
 }
 
 .app {
   color: #fff;
-  font-family: $big-font;
-  height: 100%;
   margin: auto;
-  text-align: center;
   width: 100%;
 
   @media only screen and (min-width: $responsive-breakpoint) {
     width: 80%;
-  }
-}
-
-.welcome {
-  color: #f6d0fe;
-  letter-spacing: 0.1rem;
-  padding-top: 2rem;
-  font: {
-    size: 1.5rem;
-    weight: bold;
-  }
-
-  @media only screen and (min-width: $responsive-breakpoint) {
-    font-size: 3rem;
-    padding-top: 6rem;
   }
 }
 
@@ -161,6 +164,13 @@ body {
 
 button {
   font-family: $little-font;
+}
+
+.result-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .band-name {
@@ -198,8 +208,6 @@ button {
 }
 
 .media-bar {
-  background: rgba(0, 0, 0, 0.45);
-  bottom: 0;
   color: #f6d0fe;
   cursor: pointer;
   display: grid;
@@ -211,9 +219,7 @@ button {
   letter-spacing: 0.1rem;
   margin: 0 auto;
   padding: 1rem;
-  position: fixed;
   text-decoration: none;
-  width: 100%;
 
   @media only screen and (min-width: $responsive-breakpoint) {
     display: block;
