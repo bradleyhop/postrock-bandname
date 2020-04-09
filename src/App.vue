@@ -1,12 +1,17 @@
 <template>
+
   <div class="app">
-    <div v-for="(query, index) in questions" :key="index">
+
+    <div v-for="(query, index) in questionImport" :key="index">
       <div v-if="index === questionIndex">
-        <div class="query">{{ query }}</div>
-        <SelectGenerator @childClick="addToBandName" :qIndex="index" />
+        <div class="question-form">
+            <SelectGenerator @childClick="addToBandName" :qIndex="index" />
+        </div>
       </div>
     </div>
-    <div v-if="questionIndex === questions.length" class="result-wrapper">
+
+    <div v-if="questionIndex === questionImport.length">
+
       <div class="top-wrapper">
         <div class="result-copy">
           <i>&#40; your band name is &#41;</i>
@@ -19,6 +24,7 @@
           reset generator
         </button>
       </div>
+
       <div class="bottom-wrapper">
         <social-sharing
           url="https://bradleyhop.github.io/postRockBandName"
@@ -45,13 +51,16 @@
           </div>
         </social-sharing>
       </div>
-    </div><!-- end result-wrapper -->
+
+    </div><!-- end v-if statement -->
+
   </div><!-- end app -->
 </template>
 
 <script>
 import SocialSharing from 'vue-social-sharing';
 import SelectGenerator from './components/SelectGenerator.vue';
+import questionArray from './postRock';
 
 export default {
   name: 'App',
@@ -61,12 +70,7 @@ export default {
   },
   data() {
     return {
-      questions: [
-        'what is your birth month?',
-        'first letter of your last name?',
-        'color of your shirt?',
-        'last number of the year you were born?',
-      ],
+      questionImport: questionArray,
       questionIndex: 0,
       userBandName: '',
     };
@@ -102,17 +106,16 @@ body {
     color: #000;
     image:
       linear-gradient(
-        rgba(0, 0, 0, 0.55),
-        rgba(0, 0, 0, 0.55)
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.45)
       ),
       url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT.jpg');
     position: center top;
-    repeat: repeat-y;
+    repeat: repeat;
     size: cover;
   }
 
   font-family: $big-font;
-  height: 100%;
   margin: auto;
   padding: 0;
   text-align: center;
@@ -120,6 +123,8 @@ body {
 }
 
 .welcome {
+  margin-top: 3rem;
+
   h1 {
     color: #f6d0fe;
     letter-spacing: 0.1rem;
@@ -147,7 +152,7 @@ body {
   }
 }
 
-.query,
+.question-form,
 .result-copy {
   font: {
     family: $little-font;
@@ -164,13 +169,6 @@ body {
 
 button {
   font-family: $little-font;
-}
-
-.result-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: space-between;
 }
 
 .band-name {
@@ -215,7 +213,6 @@ button {
   grid-row-gap: 0.5rem;
   grid-template-columns: repeat(2, auto);
   justify-items: start;
-  left: 0;
   letter-spacing: 0.1rem;
   margin: 0 auto;
   padding: 1rem;
@@ -228,7 +225,8 @@ button {
 }
 
 .media-link {
-  padding: 0.25rem;
+  display: inline-block;
+  margin: 0.25rem;
 
   &:hover {
     color: #fff;
