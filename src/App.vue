@@ -95,6 +95,7 @@ export default {
 $big-font: 'Varela Round', roboto, arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 $responsive-breakpoint: 768px;
+$tablet-breakpoint: 801px;
 
 html {
   font-size: 18px;
@@ -109,7 +110,8 @@ body {
         rgba(0, 0, 0, 0.45),
         rgba(0, 0, 0, 0.45)
       ),
-      url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT.jpg');
+      url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT-Smaller.jpg'),
+      url('../public/assests/jpeg/jeremy-thomas-4dpAqfTbvKA-unsplash-EDIT.webp');
     position: center top;
     repeat: repeat;
     size: cover;
@@ -167,10 +169,6 @@ body {
   }
 }
 
-button {
-  font-family: $little-font;
-}
-
 .band-name {
   color: #cfecf8;
   letter-spacing: 0.25rem;
@@ -188,12 +186,12 @@ button {
 }
 
 .band-button {
-  background: rgba(255, 255, 255, 0.45);
-  border: rgb(255, 255, 255) solid 1px;
+  background: rgba(255, 255, 255, 0.65);
+  border: #fff solid 2px;
   border-radius: 5px;
-  box-shadow: 5px 5px 5px #000;
-  color: #fff;
+  color: #000;
   cursor: pointer;
+  font-family: $little-font;
   font-size: 1rem;
   letter-spacing: 0.1rem;
   margin: 1rem;
@@ -201,7 +199,7 @@ button {
   text-decoration: none;
 
   &:hover {
-    color: #000;
+    color: #cfecf8;
   }
 }
 
@@ -212,13 +210,12 @@ button {
   font-size: 1.25rem;
   grid-row-gap: 0.5rem;
   grid-template-columns: repeat(2, auto);
-  justify-items: start;
-  letter-spacing: 0.1rem;
+  justify-content: space-around;
   margin: 0 auto;
   padding: 1rem;
   text-decoration: none;
 
-  @media only screen and (min-width: $responsive-breakpoint) {
+  @media only screen and (min-width: $tablet-breakpoint) {
     display: block;
     font-size: 2rem;
   }
