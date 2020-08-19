@@ -55,7 +55,14 @@ $little-font: 'Open Sans', sans-serif;
 }
 
 select {
+  // next four rules restyles the arrow for the drop select element
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='28' viewBox='0 0 28 28' width='28' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 0.5rem;
   border-style: none;
+  border-radius: 3px;
   font-family: $little-font;
   font-size: 1rem;
   margin-top: 0.5rem;
