@@ -96,6 +96,8 @@ $big-font: 'Varela Round', roboto, arial, sans-serif;
 $little-font: 'Open Sans', sans-serif;
 $responsive-breakpoint: 768px;
 $tablet-breakpoint: 801px;
+$light-blue: #cfecf8;
+$light-purple: #f6d0fe;
 
 html {
   font-size: 18px;
@@ -125,21 +127,28 @@ body {
 }
 
 .welcome {
-  margin-top: 3rem;
+  margin-top: 2rem;
 
   h1 {
-    color: #f6d0fe;
     letter-spacing: 0.1rem;
     margin-block: 0;
     font: {
       size: 1.5rem;
       weight: bold;
     }
+    a {
+      color: $light-purple;
+      text-decoration: none;
+
+      &:hover {
+        color: $light-blue;
+      }
+    }
   }
 
   @media only screen and (min-width: $responsive-breakpoint) {
     h1 {
-      font-size: 3rem;
+      font-size: 2.75rem;
     }
   }
 }
@@ -165,12 +174,12 @@ body {
 
   @media only screen and (min-width: $responsive-breakpoint) {
     font-size: 2rem;
-    padding: 3rem 0 2rem;
+    padding: 2rem 0 1rem;
   }
 }
 
 .band-name {
-  color: #cfecf8;
+  color: $light-blue;
   letter-spacing: 0.25rem;
   padding: 0.5rem 0;
   font: {
@@ -180,14 +189,14 @@ body {
   }
 
   @media only screen and (min-width: $responsive-breakpoint) {
-    font-size: 4rem;
+    font-size: 3.5rem;
     padding: 1rem 0.5rem;
   }
 }
 
 .band-button {
-  background: rgba(255, 255, 255, 0.65);
-  border: #fff solid 2px;
+  background: $light-blue;
+  border: none;
   border-radius: 5px;
   color: #000;
   cursor: pointer;
@@ -199,12 +208,13 @@ body {
   text-decoration: none;
 
   &:hover {
-    color: #cfecf8;
+    background-color: #000;
+    color: $light-blue;
   }
 }
 
 .media-bar {
-  color: #f6d0fe;
+  color: $light-purple;
   cursor: pointer;
   display: grid;
   font-size: 1.25rem;
